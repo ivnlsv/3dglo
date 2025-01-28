@@ -1,6 +1,6 @@
-import "./css/bootstrap.min.css";
-import "./css/style.min.css";
-import timer from "./modules/timer";
+import './css/bootstrap.min.css';
+import './css/style.min.css';
+import timer from './modules/timer';
 import menu from './modules/menu';
 import modal from './modules/modal';
 import scroll from './modules/scroll';
