@@ -6,7 +6,7 @@ import modal from './modules/modal';
 import scroll from './modules/scroll';
 import validation from './modules/validation'
 
-timer("31 january 2025");
+timer("7 february 2025");
 menu();
 modal();
 scroll();
