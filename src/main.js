@@ -4,6 +4,6 @@ import timer from "./modules/timer";
 import menu from './modules/menu';
 import modal from './modules/modal'
 
-timer("31 january 2025");
+timer("7 february 2025");
 menu();
 modal();
