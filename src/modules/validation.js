@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 const validation = () => {
     const inputs = {
         calcItem: {
