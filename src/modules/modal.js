@@ -16,7 +16,7 @@ const modal = () => {
                     } else {
                         clearInterval(fadein);
                     }
-                }, 50);
+                }, 25);
             } else { 
                 modal.style.display = 'block';
                 modal.style.opacity = '1';
@@ -36,7 +36,7 @@ const modal = () => {
                     clearInterval(fadeout);
                     modal.style.display = 'none';
                 }
-            }, 50);
+            }, 25);
         } else { 
             modal.style.display = 'none';
             modal.style.opacity = '0';
