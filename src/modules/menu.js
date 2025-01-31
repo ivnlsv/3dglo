@@ -1,6 +1,6 @@
 const menu = () => {
 	const main = document.querySelector('main');
-	const menuBtn = document.querySelector('.menu');
+	const menuBtn = document.querySelector('.menu img');
 	const menu = document.querySelector('menu');
 
 	const toggleMenu = (target) => {
