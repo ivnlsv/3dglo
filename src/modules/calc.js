@@ -29,9 +29,21 @@ const calc = (price = 100) => {
         } else { 
             totalValue = 0;
         }
-        total.textContent = totalValue
+        //total.textContent = totalValue
+        animateValue(total, total.textContent, totalValue, 500);
     };
-        
+    const animateValue = (element, start, end, duration) => {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            element.textContent = Math.floor(progress * (end - start) + +start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
 	calcBlock.addEventListener('input', (e) => {
 		if (
 			e.target === calcType ||
