@@ -7,6 +7,7 @@ import scroll from './modules/scroll';
 import validation from './modules/validation';
 import tabs from './modules/tabs';
 import slider from './modules/slider';
+import calc from './modules/calc';
 
 timer("7 february 2025");
 menu();
@@ -15,3 +16,4 @@ scroll();
 validation();
 tabs();
 slider();
+calc(100)
