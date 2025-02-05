@@ -2,7 +2,7 @@
 const validation = () => {
     const inputs = {
         calcItem: {
-            elements: document.querySelectorAll('.calc-item'),
+            elements: document.querySelectorAll('.calc-item:not(.calc-type)'),
             regex: /^[0-9]*$/,
             errorMsg: 'Введите только цифры'
         },
