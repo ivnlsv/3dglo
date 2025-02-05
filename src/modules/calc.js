@@ -1,3 +1,5 @@
+import { animate } from './helpers';
+
 const calc = (price = 100) => {
 	const calcBlock = document.querySelector('.calc-block');
 	const calcType = document.querySelector('.calc-type');
@@ -29,20 +31,19 @@ const calc = (price = 100) => {
 		} else {
 			totalValue = 0;
 		}
-		animateValue(total, total.textContent, totalValue, 500);
+		
+		animateValue(total, +total.textContent, totalValue, 500);
 	};
+
 	const animateValue = (element, start, end, duration) => {
-		let startTimestamp = null;
-		const step = (timestamp) => {
-			if (!startTimestamp) startTimestamp = timestamp;
-			const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-			element.textContent = Math.floor(progress * (end - start) + +start);
-			if (progress < 1) {
-				window.requestAnimationFrame(step);
-			}
+		const timing = (timeFraction) => timeFraction; 
+		const draw = (progress) => {
+			element.textContent = Math.floor(progress * (end - start) + start);
 		};
-		window.requestAnimationFrame(step);
+		
+		animate({ timing, draw, duration });
 	};
+
 	calcBlock.addEventListener('input', (e) => {
 		if (
 			e.target === calcType ||
@@ -54,4 +55,5 @@ const calc = (price = 100) => {
 		}
 	});
 };
+
 export default calc;
