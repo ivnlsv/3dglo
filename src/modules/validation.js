@@ -6,9 +6,9 @@ const validation = (form) => {
             errorMsg: 'Введите только цифры'
         },
         textItem: {
-            elements: form.querySelectorAll('input[type=text][placeholder="Ваше сообщение"], input[type="text"][placeholder="Ваше имя"]'),
-            regex: /^[а-яА-ЯёЁ\s-]+$/,
-            errorMsg: 'Недопустимый ввод в текстовое поле. Введите только буквы на кирилице, пробел или дефис'
+            elements: form.querySelectorAll('input[type="text"][placeholder="Ваше имя"]'),
+            regex: /^[а-яА-ЯёЁ\s]+$/,
+            errorMsg: 'Недопустимый ввод в текстовое поле. Введите только буквы на кирилице и пробел'
         },
         emailItem: {
             elements: form.querySelectorAll('input[type=email]'),
@@ -19,6 +19,11 @@ const validation = (form) => {
             elements: form.querySelectorAll('input[type=tel]'),
             regex: /^[0-9()\-+]+$/,
             errorMsg: 'Недопустимый ввод номера телефона. Введите только цифры 0-9, () - +'
+        },
+        msgItem: {
+            elements: form.querySelectorAll('input[type=text][placeholder="Ваше сообщение"]'),
+            regex: /^[а-яА-ЯёЁ\s0-9.,?!]+$/,
+            errorMsg: 'Недопустимый ввод в текстовое поле. Введите только кириллицу, пробелы, цифры и знаки препинания'
         }
     };
 
