@@ -69,14 +69,14 @@ const slider = (
 		updateActiveDot();
 	};
 	const updateActiveDot = () => {
-        [...dotsBlock.children].forEach((dot, index) => {
-            if (index === currentSlide) {
-                dot.classList.add(activeClassDot);
-            } else {
-                dot.classList.remove(activeClassDot);
-            }
-        });
-    };
+		[...dotsBlock.children].forEach((dot, index) => {
+			if (index === currentSlide) {
+				dot.classList.add(activeClassDot);
+			} else {
+				dot.classList.remove(activeClassDot);
+			}
+		});
+	};
 	sliderBlock.addEventListener('click', (e) => {
 		e.preventDefault();
 
