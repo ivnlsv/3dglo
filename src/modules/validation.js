@@ -31,7 +31,9 @@ const validation = (form) => {
 
     Object.values(inputs).forEach(({ elements, regex, errorMsg }) => {
         elements.forEach(input => {
-            if (!regex.test(input.value)) {
+            if (!input.value) {
+                errors.push({ field: input, message: 'Поле не может быть пустым' });
+            } else if (!regex.test(input.value)) {
                 errors.push({ field: input, message: errorMsg });
             }
         });

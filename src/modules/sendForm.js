@@ -51,6 +51,9 @@ const sendForm = ({ formId, someElem = [] }) => {
         if (errors.length === 0) {
             sendData(formBody).then(data => {
                 statusBlock.textContent = successText;
+                setTimeout(() => {
+                    statusBlock.textContent = "";
+                }, 5000);
                 formElements.forEach(input => {
                     input.value = '';
                 });
@@ -58,6 +61,7 @@ const sendForm = ({ formId, someElem = [] }) => {
                 statusBlock.textContent = errorText;
             });
         } else {
+            form.removeChild(statusBlock);
             displayErrors(errors);
         }
     };
@@ -69,6 +73,7 @@ const sendForm = ({ formId, someElem = [] }) => {
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             submitForm();
+            
         });
     } catch (error) {
         console.log(error.message);
